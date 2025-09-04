@@ -2,7 +2,7 @@
 #import <React/RCTConvert.h>
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "PPSSignatureView.h"
+#import "PPSSignatureView_Metal.h"
 #import "RSSignatureViewManager.h"
 
 #define DEGREES_TO_RADIANS(x) (M_PI * (x) / 180.0)
@@ -10,7 +10,6 @@
 @implementation RSSignatureView {
 	CAShapeLayer *_border;
 	BOOL _loaded;
-	EAGLContext *_context;
 	UIButton *saveButton;
 	UIButton *clearButton;
 	UILabel *titleLabel;
@@ -61,13 +60,10 @@
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:)
 																								 name:UIDeviceOrientationDidChangeNotification object:nil];
 
-		_context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-
 		CGSize screen = self.bounds.size;
 
-		sign = [[PPSSignatureView alloc]
-						initWithFrame: CGRectMake(0, 0, screen.width, screen.height)
-						context: _context];
+		sign = [[PPSSignatureView_Metal alloc]
+						initWithFrame: CGRectMake(0, 0, screen.width, screen.height)];
 		sign.manager = manager;
 		sign.backgroundColor = _backgroundColor;
 		sign.strokeColor = _strokeColor;

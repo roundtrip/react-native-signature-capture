@@ -1,4 +1,4 @@
-#import "PPSSignatureView.h"
+#import "PPSSignatureView_Metal.h"
 #import <UIKit/UIKit.h>
 #import <React/RCTView.h>
 #import <React/RCTBridge.h>
@@ -6,7 +6,7 @@
 @class RSSignatureViewManager;
 
 @interface RSSignatureView : RCTView
-@property (nonatomic, strong) PPSSignatureView *sign;
+@property (nonatomic, strong) PPSSignatureView_Metal *sign;
 @property (nonatomic, strong) RSSignatureViewManager *manager;
 -(void) onSaveButtonPressed;
 -(void) onClearButtonPressed;

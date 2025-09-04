@@ -10,6 +10,8 @@
 		0C53A9EE1B56134F004F2642 /* RSSignatureViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53A9ED1B56134F004F2642 /* RSSignatureViewManager.m */; };
 		0C53A9F31B5613AF004F2642 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53A9F01B5613AF004F2642 /* PPSSignatureView.m */; };
 		0C53A9F41B5613AF004F2642 /* RSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C53A9F21B5613AF004F2642 /* RSSignatureView.m */; };
+		49FB6BCE2E69E10200DFAE28 /* SignatureShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 49FB6BCD2E69E10200DFAE28 /* SignatureShaders.metal */; };
+		49FB6BCF2E69E10200DFAE28 /* PPSSignatureView_Metal.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB6BCC2E69E10200DFAE28 /* PPSSignatureView_Metal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +34,9 @@
 		0C53A9F01B5613AF004F2642 /* PPSSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSSignatureView.m; sourceTree = "<group>"; };
 		0C53A9F11B5613AF004F2642 /* RSSignatureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSignatureView.h; sourceTree = "<group>"; };
 		0C53A9F21B5613AF004F2642 /* RSSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSignatureView.m; sourceTree = "<group>"; };
+		49FB6BCB2E69E10200DFAE28 /* PPSSignatureView_Metal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPSSignatureView_Metal.h; sourceTree = "<group>"; };
+		49FB6BCC2E69E10200DFAE28 /* PPSSignatureView_Metal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPSSignatureView_Metal.m; sourceTree = "<group>"; };
+		49FB6BCD2E69E10200DFAE28 /* SignatureShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SignatureShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +53,9 @@
 		0C53A9951B56113D004F2642 = {
 			isa = PBXGroup;
 			children = (
+				49FB6BCB2E69E10200DFAE28 /* PPSSignatureView_Metal.h */,
+				49FB6BCC2E69E10200DFAE28 /* PPSSignatureView_Metal.m */,
+				49FB6BCD2E69E10200DFAE28 /* SignatureShaders.metal */,
 				0C53A9EF1B5613AF004F2642 /* PPSSignatureView.h */,
 				0C53A9F01B5613AF004F2642 /* PPSSignatureView.m */,
 				0C53A9F11B5613AF004F2642 /* RSSignatureView.h */,
@@ -105,6 +113,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 0C53A9951B56113D004F2642;
@@ -122,6 +131,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FB6BCE2E69E10200DFAE28 /* SignatureShaders.metal in Sources */,
+				49FB6BCF2E69E10200DFAE28 /* PPSSignatureView_Metal.m in Sources */,
 				0C53A9EE1B56134F004F2642 /* RSSignatureViewManager.m in Sources */,
 				0C53A9F41B5613AF004F2642 /* RSSignatureView.m in Sources */,
 				0C53A9F31B5613AF004F2642 /* PPSSignatureView.m in Sources */,
