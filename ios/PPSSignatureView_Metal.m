@@ -480,22 +480,26 @@ static simd_float4x4 matrix_translation(float tx, float ty, float tz) {
                    mipmapLevel:0];
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGDataProviderRef dataProvider = CGDataProviderCreateWithData(NULL, imageBytes, totalBytes, NULL);
-    
+
+    // Create NSData to properly manage the buffer lifecycle
+    NSData *imageData = [NSData dataWithBytes:imageBytes length:totalBytes];
+    free(imageBytes); // Free the malloc'd buffer since NSData has copied it
+
+    CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)imageData);
+
     CGImageRef cgImage = CGImageCreate(imageSize.width, imageSize.height,
                                       8, 32, bytesPerRow,
                                       colorSpace,
                                       kCGImageAlphaFirst | kCGBitmapByteOrder32Little,
                                       dataProvider, NULL, false,
                                       kCGRenderingIntentDefault);
-    
+
     UIImage *image = [UIImage imageWithCGImage:cgImage];
-    
+
     // Cleanup
     CGImageRelease(cgImage);
     CGDataProviderRelease(dataProvider);
     CGColorSpaceRelease(colorSpace);
-    free(imageBytes);
     
     return image;
 }
